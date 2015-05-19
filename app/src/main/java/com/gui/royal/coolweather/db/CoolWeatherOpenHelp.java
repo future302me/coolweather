@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by Jeremy on 2015/5/17.
+ * 创建数据库类
+ * 继承SQLiteOpenHelper类，实现onCreate（）和onUpgrade（）方法
  */
 public class CoolWeatherOpenHelp extends SQLiteOpenHelper {
     /**
@@ -37,6 +39,10 @@ public class CoolWeatherOpenHelp extends SQLiteOpenHelper {
         super(context, name, factory, version);
     }
 
+    /**
+     * 创建数据库表：Province  City  County
+     * @param db SQLiteDatabase,可对数据库进行读写操作的对象
+     */
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_PROVINCE); //创建Province表

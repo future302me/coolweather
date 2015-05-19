@@ -14,6 +14,9 @@ import java.util.List;
 
 /**
  * Created by Jeremy on 2015/5/17.
+ * 封装了一些常用的数据库操作
+ * 获取数据库实例getInstance（）
+ *
  */
 public class CoolWeatherDB {
 
@@ -44,6 +47,26 @@ public class CoolWeatherDB {
      * 获取CoolWeatherDB的实例
      * @param context 上下文
      * @return 返回CoolWeatherDB的实例
+     * synchronized同步锁住获取实例
+     * public class Demo {
+    private static volatile instance;
+
+    public static Demo getInstance() {
+    if (instance == null) {
+    synchronized(Demo.class) {
+    if (instance == null) {
+    instance = new Demo();
+    }
+    }
+    }
+
+    return instance;
+    }
+
+    private Demo() {
+
+    }
+    }
      */
     public synchronized static CoolWeatherDB getInstance(Context context) {
         if (coolWeatherDB == null) {
@@ -68,7 +91,7 @@ public class CoolWeatherDB {
      * 从数据库中读取全国省份信息
      * @return 返回全国省份的List
      */
-    public List<Province> loadProvince() {
+    public List<Province> loadProvinces() {
         List<Province> list = new ArrayList<>();
         Cursor cursor = db
                         .query("Province", null, null, null,null,null, null);

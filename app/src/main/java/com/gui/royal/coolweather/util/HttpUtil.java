@@ -1,5 +1,7 @@
 package com.gui.royal.coolweather.util;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -17,6 +19,7 @@ public class HttpUtil {
             public void run() {
                 HttpURLConnection connection = null;
                 try {
+                    //Log.d("address", String.valueOf(address));
                     URL url = new URL(address);
                     connection = (HttpURLConnection)url.openConnection();
                     connection.setRequestMethod("GET");
