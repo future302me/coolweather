@@ -49,24 +49,20 @@ public class CoolWeatherDB {
      * @return 返回CoolWeatherDB的实例
      * synchronized同步锁住获取实例
      * public class Demo {
-    private static volatile instance;
-
-    public static Demo getInstance() {
-    if (instance == null) {
-    synchronized(Demo.class) {
-    if (instance == null) {
-    instance = new Demo();
+         private static volatile instance;
+         public static Demo getInstance() {
+             if (instance == null) {
+                 synchronized(Demo.class) {
+                     if (instance == null) {
+                          instance = new Demo();
+                      }
+                 }
+              }
+              return instance;
     }
-    }
-    }
-
-    return instance;
-    }
-
-    private Demo() {
-
-    }
-    }
+        private Demo() {
+     }
+  }
      */
     public synchronized static CoolWeatherDB getInstance(Context context) {
         if (coolWeatherDB == null) {

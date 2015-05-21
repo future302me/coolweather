@@ -2,28 +2,48 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <RelativeLayout
+        android:id="@+id/rl_title"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#484E61">
+        android:background="@drawable/title_background">
+
+        <Button
+            android:id="@+id/btn_switch_city"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/home"
+            />
 
         <TextView
             android:id="@+id/tv_city_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:textColor="#0f0"
+            android:textColor="#000"
             android:textSize="24sp"
             />
+
+        <Button
+            android:id="@+id/btn_refresh_weather"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/refresh"/>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#27A5F9">
+        android:background="#00000000">
 
         <TextView
              android:id="@+id/tv_publish"
@@ -32,7 +52,7 @@
              android:layout_alignParentRight="true"
              android:layout_marginRight="10dp"
              android:layout_marginTop="10dp"
-             android:textColor="#0f0"
+             android:textColor="#bbffffff"
              android:textSize="18sp"/>
 
         <LinearLayout
@@ -47,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:gravity="center"
-                android:textColor="#0f0"
+                android:textColor="#bbffffff"
                 android:textSize="18sp"/>
             
             <TextView
@@ -56,7 +76,7 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center_horizontal"
                 android:gravity="center"
-                android:textColor="#0f0"
+                android:textColor="#bbffffff"
                 android:textSize="40sp"/>
             
             <LinearLayout
@@ -70,7 +90,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:textColor="#0f0"
+                    android:textColor="#bbffffff"
                     android:textSize="40sp"
                     />
 
@@ -80,8 +100,8 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:text="~"
-                    android:textColor="#0f0"
+                    android:text="~~"
+                    android:textColor="#bbffffff"
                     android:textSize="40sp"
                     />
 
@@ -90,7 +110,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:textColor="#0f0"
+                    android:textColor="#bbffffff"
                     android:textSize="40sp"/>
            
             </LinearLayout>

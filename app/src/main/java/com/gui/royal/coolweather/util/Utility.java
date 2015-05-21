@@ -92,17 +92,20 @@ public class Utility {
 
     /**
      * 解析JSON数据，并将解析出的数据存储到本地
+     * {"weatherinfo":
+     *      {"city":"昆山","cityid":"101190404","temp1":"21.C","temp2":"9.C","weather":"多云转小雨","img1":"d1.gif","img2":"n7.gif","ptime":"11:00"}
+     * }
      */
     public static void handleWeatherResponse(Context context, String response) {
         try {
             JSONObject jsonObject = new JSONObject(response);
             JSONObject weatherInfo = jsonObject.getJSONObject("weatherinfo");
-            String cityName = weatherInfo.getString("city");
-            String weatherCode = weatherInfo.getString("cityid");
-            String temp1 = weatherInfo.getString("temp1");
-            String temp2 = weatherInfo.getString("temp2");
-            String weatherDesp = weatherInfo.getString("weather");
-            String publishTime = weatherInfo.getString("ptime");
+            String cityName = weatherInfo.getString("city");//"city":"昆山"
+            String weatherCode = weatherInfo.getString("cityid");//"cityid":"101190404"
+            String temp1 = weatherInfo.getString("temp1");//"temp1":"21.C"
+            String temp2 = weatherInfo.getString("temp2");//"temp2":"9.C"
+            String weatherDesp = weatherInfo.getString("weather");//"weather":"多云转小雨"
+            String publishTime = weatherInfo.getString("ptime");//"ptime":"11:00"
             saveWeatherInfo(context, cityName, weatherCode, temp1, temp2, weatherDesp, publishTime);
         }catch (JSONException e){
             e.printStackTrace();
